@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{22849707-9A6B-457A-A89C-8471EE66AE59}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClientAPP.VideoModule</RootNamespace>
+    <AssemblyName>ClientApp.VideoModule</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config\VideoConfig.cs" />
+    <Compile Include="Config\VideoControlConfig.cs" />
+    <Compile Include="ImgResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImgResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="VideoControl\Layout.cs" />
+    <Compile Include="VideoControl\VideoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VideoControl\VideoControl.designer.cs">
+      <DependentUpon>VideoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VideoControl\VideoControlEvent.cs" />
+    <Compile Include="VideoControl\VideoControl_Utility.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VideoManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VideoControl\VideoPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="VideoSource\VideoSourceBase.cs" />
+    <Compile Include="VideoSource\VideoSource_HikOpen8200.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ClientAPP.Core\ClientAPP.Core.csproj">
+      <Project>{cca14424-61cb-4b97-88e6-d6d38b0bbbaa}</Project>
+      <Name>ClientAPP.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ClientAPP.Uti\ClientAPP.Uti.csproj">
+      <Project>{eea9c4d0-6350-4d2a-a865-7e8f7278cc13}</Project>
+      <Name>ClientAPP.Uti</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ImgResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ImgResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VideoControl\VideoControl.resx">
+      <DependentUpon>VideoControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\播放b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\播放k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\打开b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\打开k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\打开w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\打开声音b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\打开声音k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\打开声音w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\单帧b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\单帧k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\关闭b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\关闭k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\关闭w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\关闭声音b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\关闭声音k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\关闭声音w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\快b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\快k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\慢b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\慢k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\上.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\上e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\缩放b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\缩放k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\缩放w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\锁住b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\锁住k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\锁住w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\停止b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\停止k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\停止下载-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\停止下载-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\图标底图.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\下.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\下e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\下载b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\下载k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\续b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\续k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\隐藏显示b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\隐藏显示k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\隐藏显示w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\右.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\右e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\右上.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\右上e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\右下.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\右下e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\暂停b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\暂停k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\抓图b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\抓图k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\抓图w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\左.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\左e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\左上.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\左上e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\左下.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\左下e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\停止下载b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\停止下载k.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
