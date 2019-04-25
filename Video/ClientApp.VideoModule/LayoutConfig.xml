@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LayoutConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Layout Name="1" Image="Image\单画面.png" ColumnCount="1" RowCount="1" Visible="true" ScreenCount="1">
+    <VideoControl Column="0" ColumnSpan="1" Row="0" RowSpan="1" />
+  </Layout>
+  <Layout Name="4" Image="Image\4画面.png" ColumnCount="2" RowCount="2" Visible="true" ScreenCount="1">
+    <VideoControl Column="0" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="1" RowSpan="1" />
+  </Layout>
+  <Layout Name="9" Image="Image\9画面.png" ColumnCount="3" RowCount="3" Visible="true" ScreenCount="1">
+    <VideoControl Column="0" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="2" RowSpan="1" />
+  </Layout>
+  <Layout Name="16" Image="Image\16画面.png" ColumnCount="4" RowCount="4" Visible="true" ScreenCount="1">
+    <VideoControl Column="0" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="3" RowSpan="1" />
+  </Layout>
+  <Layout Name="8" Image="Image\中间大四周小.png" ColumnCount="4" RowCount="4" Visible="true" ScreenCount="1">
+    <VideoControl Column="0" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="2" Row="1" RowSpan="2" />
+    <VideoControl Column="3" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="3" RowSpan="1" />
+  </Layout>
+  <Layout Name="中间大四周小2" Image="Image\sixteen.gif" ColumnCount="5" RowCount="5" Visible="false" ScreenCount="1">
+    <VideoControl Column="0" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="4" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="3" Row="1" RowSpan="3" />
+    <VideoControl Column="4" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="4" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="4" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="4" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="4" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="4" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="4" RowSpan="1" />
+    <VideoControl Column="4" ColumnSpan="1" Row="4" RowSpan="1" />
+  </Layout>
+  <Layout Name="25" Image="Image\sixteen.gif" ColumnCount="5" RowCount="5" Visible="false" ScreenCount="1">
+    <VideoControl Column="0" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="4" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="4" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="4" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="4" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="4" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="4" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="4" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="4" RowSpan="1" />
+    <VideoControl Column="4" ColumnSpan="1" Row="4" RowSpan="1" />
+  </Layout>
+  <Layout Name="36" Image="Image\sixteen.gif" ColumnCount="6" RowCount="6" Visible="false" ScreenCount="1">
+    <VideoControl Column="0" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="4" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="5" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="4" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="5" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="4" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="5" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="4" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="5" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="4" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="4" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="4" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="4" RowSpan="1" />
+    <VideoControl Column="4" ColumnSpan="1" Row="4" RowSpan="1" />
+    <VideoControl Column="5" ColumnSpan="1" Row="4" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="5" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="5" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="5" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="5" RowSpan="1" />
+    <VideoControl Column="4" ColumnSpan="1" Row="5" RowSpan="1" />
+    <VideoControl Column="5" ColumnSpan="1" Row="5" RowSpan="1" />
+  </Layout>
+  <Layout Name="15" Image="Image\15画面.png" ColumnCount="5" RowCount="3" Visible="true" ScreenCount="1">
+    <VideoControl Column="0" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="4" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="4" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="4" ColumnSpan="1" Row="2" RowSpan="1" />
+  </Layout>
+  <Layout Name="八画面" Image="Image\8画面.png" ColumnCount="4" RowCount="4" Visible="true" ScreenCount="1">
+    <VideoControl Column="0" ColumnSpan="3" Row="0" RowSpan="3" />
+    <VideoControl Column="3" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="3" RowSpan="1" />
+  </Layout>
+  <Layout Name="两画面(双屏)" Image="Image\单画面.png" ColumnCount="2" RowCount="1" Visible="true" ScreenCount="2">
+    <VideoControl Column="0" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="0" RowSpan="1" />
+  </Layout>>
+  <Layout Name="八画面(双屏)" Image="Image\4画面.png" ColumnCount="4" RowCount="2" Visible="true" ScreenCount="2">
+    <VideoControl Column="0" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="1" RowSpan="1" />
+  </Layout>
+  <Layout Name="十八画面(双屏)" Image="Image\9画面.png" ColumnCount="6" RowCount="3" Visible="true" ScreenCount="2">
+    <VideoControl Column="0" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="4" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="5" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="4" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="5" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="4" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="5" ColumnSpan="1" Row="2" RowSpan="1" />
+  </Layout>
+  <Layout Name="三十二画面" Image="Image\16画面.png" ColumnCount="8" RowCount="4" Visible="true" ScreenCount="2">
+    <VideoControl Column="0" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="4" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="5" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="6" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="7" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="4" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="5" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="6" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="7" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="4" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="5" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="6" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="7" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="4" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="5" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="6" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="7" ColumnSpan="1" Row="3" RowSpan="1" />
+  </Layout>
+  <Layout Name="2" Image="Image\4画面.png" ColumnCount="2" RowCount="1" Visible="true" ScreenCount="1">
+    <VideoControl Column="0" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="0" RowSpan="1" />
+  </Layout>
+  <Layout Name="3" Image="Image\4画面.png" ColumnCount="2" RowCount="2" Visible="true" ScreenCount="1">
+    <VideoControl Column="0" ColumnSpan="1" Row="0" RowSpan="2" />
+    <VideoControl Column="1" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="1" RowSpan="1" />
+  </Layout>
+  <Layout Name="5" Image="Image\4画面.png" ColumnCount="6" RowCount="2" Visible="true" ScreenCount="1">
+    <VideoControl Column="0" ColumnSpan="3" Row="0" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="3" Row="0" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="2" Row="1" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="2" Row="1" RowSpan="1" />
+    <VideoControl Column="4" ColumnSpan="2" Row="1" RowSpan="1" />
+  </Layout>
+  <Layout Name="6" Image="Image\4画面.png" ColumnCount="3" RowCount="2" Visible="true" ScreenCount="1">
+    <VideoControl Column="0" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="1" RowSpan="1" />
+  </Layout>
+  <Layout Name="7" Image="Image\4画面.png" ColumnCount="4" RowCount="4" Visible="true" ScreenCount="1">
+    <VideoControl Column="0" ColumnSpan="2" Row="0" RowSpan="2" />
+    <VideoControl Column="2" ColumnSpan="2" Row="0" RowSpan="2" />
+    <VideoControl Column="0" ColumnSpan="2" Row="2" RowSpan="2" />
+    <VideoControl Column="2" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="3" RowSpan="1" />
+  </Layout>
+  <Layout Name="八画面_mult" Image="Image\4画面.png" ColumnCount="12" RowCount="4" Visible="true" ScreenCount="1">
+    <VideoControl Column="0" ColumnSpan="6" Row="0" RowSpan="2" />
+    <VideoControl Column="6" ColumnSpan="3" Row="0" RowSpan="1" />
+    <VideoControl Column="9" ColumnSpan="3" Row="0" RowSpan="1" />
+    <VideoControl Column="6" ColumnSpan="3" Row="1" RowSpan="1" />
+    <VideoControl Column="9" ColumnSpan="3" Row="1" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="4" Row="2" RowSpan="2" />
+    <VideoControl Column="4" ColumnSpan="4" Row="2" RowSpan="2" />
+    <VideoControl Column="8" ColumnSpan="4" Row="2" RowSpan="2" />
+  </Layout>
+  <Layout Name="10" Image="Image\4画面.png" ColumnCount="4" RowCount="4" Visible="true" ScreenCount="1">
+    <VideoControl Column="0" ColumnSpan="2" Row="0" RowSpan="2" />
+    <VideoControl Column="2" ColumnSpan="2" Row="0" RowSpan="2" />
+    <VideoControl Column="0" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="3" RowSpan="1" />
+  </Layout>
+  <Layout Name="11" Image="Image\4画面.png" ColumnCount="12" RowCount="4" Visible="true" ScreenCount="1">
+    <VideoControl Column="0" ColumnSpan="4" Row="0" RowSpan="2" />
+    <VideoControl Column="4" ColumnSpan="4" Row="0" RowSpan="2" />
+    <VideoControl Column="8" ColumnSpan="4" Row="0" RowSpan="2" />
+    <VideoControl Column="0" ColumnSpan="3" Row="2" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="3" Row="2" RowSpan="1" />
+    <VideoControl Column="6" ColumnSpan="3" Row="2" RowSpan="1" />
+    <VideoControl Column="9" ColumnSpan="3" Row="2" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="3" Row="3" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="3" Row="3" RowSpan="1" />
+    <VideoControl Column="6" ColumnSpan="3" Row="3" RowSpan="1" />
+    <VideoControl Column="9" ColumnSpan="3" Row="3" RowSpan="1" />
+  </Layout>
+  <Layout Name="12" Image="Image\4画面.png" ColumnCount="4" RowCount="3" Visible="true" ScreenCount="1">
+    <VideoControl Column="0" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="2" RowSpan="1" />
+  </Layout>
+  <Layout Name="13" Image="Image\4画面.png" ColumnCount="4" RowCount="4" Visible="true" ScreenCount="1">
+    <VideoControl Column="0" ColumnSpan="2" Row="0" RowSpan="2" />
+    <VideoControl Column="2" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="3" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="1" Row="3" RowSpan="1" />
+  </Layout>
+  <Layout Name="14" Image="Image\4画面.png" ColumnCount="12" RowCount="4" Visible="true" ScreenCount="1">
+    <VideoControl Column="0" ColumnSpan="4" Row="0" RowSpan="1" />
+    <VideoControl Column="4" ColumnSpan="4" Row="0" RowSpan="1" />
+    <VideoControl Column="8" ColumnSpan="4" Row="0" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="4" Row="1" RowSpan="1" />
+    <VideoControl Column="4" ColumnSpan="4" Row="1" RowSpan="1" />
+    <VideoControl Column="8" ColumnSpan="4" Row="1" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="3" Row="2" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="3" Row="2" RowSpan="1" />
+    <VideoControl Column="6" ColumnSpan="3" Row="2" RowSpan="1" />
+    <VideoControl Column="9" ColumnSpan="3" Row="2" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="3" Row="3" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="3" Row="3" RowSpan="1" />
+    <VideoControl Column="6" ColumnSpan="3" Row="3" RowSpan="1" />
+    <VideoControl Column="9" ColumnSpan="3" Row="3" RowSpan="1" />
+  </Layout>
+  <Layout Name="15" Image="Image\4画面.png" ColumnCount="12" RowCount="4" Visible="true" ScreenCount="1">
+    <VideoControl Column="0" ColumnSpan="4" Row="0" RowSpan="1" />
+    <VideoControl Column="4" ColumnSpan="4" Row="0" RowSpan="1" />
+    <VideoControl Column="8" ColumnSpan="4" Row="0" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="3" Row="1" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="3" Row="1" RowSpan="1" />
+    <VideoControl Column="6" ColumnSpan="3" Row="1" RowSpan="1" />
+    <VideoControl Column="9" ColumnSpan="3" Row="1" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="3" Row="2" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="3" Row="2" RowSpan="1" />
+    <VideoControl Column="6" ColumnSpan="3" Row="2" RowSpan="1" />
+    <VideoControl Column="9" ColumnSpan="3" Row="2" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="3" Row="3" RowSpan="1" />
+    <VideoControl Column="3" ColumnSpan="3" Row="3" RowSpan="1" />
+    <VideoControl Column="6" ColumnSpan="3" Row="3" RowSpan="1" />
+    <VideoControl Column="9" ColumnSpan="3" Row="3" RowSpan="1" />
+  </Layout>
+  <Layout Name="六画面_SHSFJ" Image="Image\4画面.png" ColumnCount="3" RowCount="3" Visible="true" ScreenCount="1">
+    <VideoControl Column="0" ColumnSpan="2" Row="0" RowSpan="2" />
+    <VideoControl Column="2" ColumnSpan="1" Row="0" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="1" RowSpan="1" />
+    <VideoControl Column="0" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="1" ColumnSpan="1" Row="2" RowSpan="1" />
+    <VideoControl Column="2" ColumnSpan="1" Row="2" RowSpan="1" />
+  </Layout>
+</LayoutConfig>

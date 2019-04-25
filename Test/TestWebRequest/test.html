@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <title>websocket client</title>
+    <script type="text/javascript">
+
+        var wsImpl;
+
+        var start = function () {
+            var inc = document.getElementById('incomming');
+            var img=document.getElementById('FingerImg');
+            wsImpl = window.WebSocket || window.MozWebSocket;
+
+            inc.innerHTML += "connecting to server ..<br/>";
+
+           
+            // create a new websocket and connect
+            window.ws = new wsImpl('ws://localhost:4502/');
+
+            // when data is comming from the server, this metod is called
+            ws.onmessage = function (evt) {
+
+                var cmdobj = JSON.parse(evt.data);
+                switch(cmdobj.cmdType)
+                {
+                    case "FingerImg":
+                    img.setAttribute( 'src','data:image/png;base64,'+cmdobj.ImgData);
+                   
+                    break;
+                    default:
+                inc.innerHTML += evt.data + '<br/>';
+                    break;
+                }
+            };
+
+            // when the connection is established, this method is called
+            ws.onopen = function () {
+                inc.innerHTML += '连接视频程序成功<br/>';
+            };
+
+            // when the connection is closed, this method is called
+            ws.onclose = function () {
+                inc.innerHTML += '连接视频程序失败，检查程序<br/>';
+            }
+
+           
+
+        }
+
+        var sendText = function (text) {
+            ws.send(text);
+            var inc = document.getElementById('incomming');
+            inc.innerHTML += '发送数据成功: '+text+'<br/>';
+        }
+
+        function sendCmd(cmd){
+            var cmdobj={cmdType: cmd};
+            var cmdText =JSON.stringify(cmdobj);
+            sendText(cmdText);
+        }
+
+        function openWindowCommand() {
+            sendText('{"Header":{"Ver":"1.0","SN":"1","Time":"2019-04-25 18:00:55","UserTag":null,"BodyType":0},"Body":{"Module":"video","Command":"OpenWindow","Params":{"Width":800,"Height":600,"LocationX":0,"LocationY":0,"ScreenID":0,"TopMost":false,"ShowWindowBorder":true,"ShowVCTitle":true,"LayoutName":"16","PanelID":"1"},"Sync":true,"RequestSN":"1"}}');
+        }
+
+        function startPreview(){
+            sendText('{"Header":{"Ver":"1.0","SN":"1","Time":"2019-04-26 00:42:53","UserTag":null,"BodyType":0},"Body":{"Module":"video","Command":"StartPreview","Params":{"VCIndex":0,"CameraID":"1","CameraName":"测试","SourceID":"1","SourceIP":"192.168.0.1","SourcePort":9000,"SourceUser":"admin","SourcePassword":"password","SourceName":"海康8200","SourceType":200,"CameraCode":"","StreamIndex":0,"PanelID":"1"},"Sync":true,"RequestSN":"1"}}');
+        }
+        function startPlayback() {
+            sendText('{"Header":{"Ver":"1.0","SN":"1","Time":"2019-04-26 00:51:24","UserTag":null,"BodyType":0},"Body":{"Module":"video","Command":"StartPlayback","Params":{"VCIndex":0,"CameraID":"1","CameraName":"测试","SourceID":"1","SourceIP":"192.168.0.1","SourcePort":9000,"SourceUser":"admin","SourcePassword":"password","SourceName":"海康8200","SourceType":200,"CameraCode":"","StartTime":"2019-04-25T23:51:24.0628638+08:00","EndTime":"2019-04-26T00:51:24.0628638+08:00","PanelID":"1"},"Sync":true,"RequestSN":"1"}}');
+        }
+
+window.onload = start;
+    </script>
+</head>
+<body>
+    <button type="button" onclick="openWindowCommand()">打开窗口</button>
+    <button type="button" onclick="startPreview()">打开实时视频</button>
+    <button type="button" onclick="startPlayback()">打开回放</button>
+    <br />
+    <img id="FingerImg" height="300" width="400" />
+    <pre id="incomming"></pre>
+</body>
+</html>

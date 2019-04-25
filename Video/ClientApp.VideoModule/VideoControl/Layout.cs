@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using System.Xml.Serialization;
 namespace ClientAPP.VideoModule
 {
@@ -10,6 +11,13 @@ namespace ClientAPP.VideoModule
     {
         [XmlArray]
         public List<Layout> Layouts { get; set; }
+
+        public static LayoutConfig LoadConfig(string file)
+        {
+            LayoutConfig ret = new LayoutConfig();
+            ret.Layouts = Layout.LoadLayoutConfig(file);
+            return ret;
+        }
     }
 
     /// <summary>
@@ -56,6 +64,94 @@ namespace ClientAPP.VideoModule
         /// 视频控件列表
         /// </summary>
         public List<VideoControlLayout> ControlList { get; set; }
+
+
+        public static List<Layout> LoadLayoutConfig(string layoutConfigFile)
+        {
+            List<Layout> rtn = new List<Layout>();
+            XmlDocument xd = new XmlDocument();
+            try
+            {
+
+                xd.Load(layoutConfigFile);
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+
+            XmlNodeList nodeList = xd.GetElementsByTagName("Layout");
+            foreach (XmlNode layoutNode in nodeList)
+            {
+                Layout curLayout = new Layout()
+                {
+                    Name = layoutNode.Attributes["Name"].InnerText,
+                    ImgPath = layoutNode.Attributes["Image"].InnerText,
+                    ColumnCount = Convert.ToInt32(layoutNode.Attributes["ColumnCount"].InnerText),
+                    RowCount = Convert.ToInt32(layoutNode.Attributes["RowCount"].InnerText),
+                    Visible = Convert.ToBoolean(layoutNode.Attributes["Visible"].InnerText),
+                    ScreenCount = Convert.ToInt32(layoutNode.Attributes["ScreenCount"].InnerText),
+                    ControlList = new List<VideoControlLayout>()
+                };
+
+                //if (layoutNode.Attributes["Visible"].InnerText == "true")
+                //    curLayout.Visible = true;
+                //else
+                //    curLayout.Visible = false;
+
+                XmlNodeList ControlListLayout = layoutNode.ChildNodes;
+                foreach (XmlNode controlNode in ControlListLayout)
+                {
+                    VideoControlLayout vcLayout = new VideoControlLayout()
+                    {
+                        Column = Convert.ToInt32(controlNode.Attributes["Column"].InnerText),
+                        ColumnSpan = Convert.ToInt32(controlNode.Attributes["ColumnSpan"].InnerText),
+                        Row = Convert.ToInt32(controlNode.Attributes["Row"].InnerText),
+                        RowSpan = Convert.ToInt32(controlNode.Attributes["RowSpan"].InnerText)
+                    };
+
+                    if (controlNode.Attributes["MaxRow"] == null)
+                    {
+                        vcLayout.MaxRow = 0;
+                    }
+                    else
+                    {
+                        vcLayout.MaxRow = Convert.ToInt32(controlNode.Attributes["MaxRow"].InnerText);
+                    }
+                    if (controlNode.Attributes["MaxRowSpan"] == null)
+                    {
+                        vcLayout.MaxRowSpan = curLayout.RowCount;
+                    }
+                    else
+                    {
+                        vcLayout.MaxRowSpan = Convert.ToInt32(controlNode.Attributes["MaxRowSpan"].InnerText);
+                    }
+                    if (controlNode.Attributes["MaxColumn"] == null)
+                    {
+                        vcLayout.MaxColumn = 0;
+                    }
+                    else
+                    {
+                        vcLayout.MaxColumn = Convert.ToInt32(controlNode.Attributes["MaxColumn"].InnerText);
+                    }
+                    if (controlNode.Attributes["MaxColumnSpan"] == null)
+                    {
+                        vcLayout.MaxColumnSpan = curLayout.ColumnCount;
+                    }
+                    else
+                    {
+                        vcLayout.MaxColumnSpan = Convert.ToInt32(controlNode.Attributes["MaxColumnSpan"].InnerText);
+                    }
+
+                    curLayout.ControlList.Add(vcLayout);
+                }
+
+                rtn.Add(curLayout);
+            }
+
+            return rtn;
+
+        }
 
 
         public static Layout GetNormalLayou(string name, int rowCount, int columnCount, int screenCount=1)

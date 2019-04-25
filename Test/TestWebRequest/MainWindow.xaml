@@ -1,0 +1,43 @@
+﻿<Window x:Class="TestWebRequest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestWebRequest"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="450"
+        Width="800">
+    <Grid>
+        <RichTextBox HorizontalAlignment="Left"
+                     Height="350"
+                     Margin="198,29,0,0"
+                     VerticalAlignment="Top"
+                     Width="570" Name="ricktextbox">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="" />
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Button Content="实时浏览"
+                HorizontalAlignment="Left"
+                Margin="44,57,0,0"
+                VerticalAlignment="Top"
+                Width="75"
+                Click="Button_Click" />
+        <Button Content="回放"
+                HorizontalAlignment="Left"
+                Margin="44,98,0,0"
+                VerticalAlignment="Top"
+                Width="75"
+                Click="Button_Click_1" />
+        <Button Content="设置窗口"
+                HorizontalAlignment="Left"
+                Margin="44,141,0,0"
+                VerticalAlignment="Top"
+                Width="75"
+                Click="Button_Click_2" />
+
+    </Grid>
+</Window>

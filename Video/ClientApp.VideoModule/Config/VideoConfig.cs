@@ -20,7 +20,7 @@ namespace ClientAPP.VideoModule.Config
         /// <summary>
         /// 截图默认路径
         /// </summary>
-        public string SanpPath { get; set; }
+        public string SnapPath { get; set; }
 
         /// <summary>
         /// 截图文件名（支持通配符）

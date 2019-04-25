@@ -22,7 +22,7 @@ namespace ClientAPP.Core.Contract.Websocket
         /// <summary>
         /// 参数
         /// </summary>
-        public string Params { get; set; }
+        public object Params { get; set; }
         /// <summary>
         /// 同步/异步执行
         /// </summary>

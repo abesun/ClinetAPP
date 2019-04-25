@@ -7,6 +7,8 @@ using Fleck;
 using ClientAPP.Core.Contract.Log;
 using ClientAPP.Core.Contract.Websocket;
 using Newtonsoft.Json;
+using ClientAPP.VideoModule;
+
 namespace ClientAPP.FormService
 {
     /// <summary>
@@ -21,6 +23,11 @@ namespace ClientAPP.FormService
         /// 日志
         /// </summary>
         public IAppLog LogModule { get; set; }
+
+        /// <summary>
+        /// 视频管理器
+        /// </summary>
+        public ServiceManager Manager { get; set; }
 
         /// <summary>
         /// 客户端
@@ -85,6 +92,11 @@ namespace ClientAPP.FormService
                 this.LogModule.Error($"接收到无法解析的内容: {message}");
                 return;
             }
+            if(wsp==null||wsp?.Header==null||wsp?.Body==null)
+            {
+                this.LogModule.Error($"接收到无法解析的内容: {message}");
+                return;
+            }
 
             switch (wsp.Header.Ver)
             {
@@ -122,42 +134,12 @@ namespace ClientAPP.FormService
         /// <param name="wsp"></param>
         private void procRequest(WSProtocol wsp)
         {
-            WSRequest wSRequest = JsonConvert.DeserializeObject<WSRequest>(wsp.Body);
-            switch(wSRequest.Module)
-            {
-                case WSDefine.VideoModule:
-                    this.procVideoRequest(wSRequest);
-                    break;
-                default:
-                    break;
-            }
+            //WSRequest wSRequest = JsonConvert.DeserializeObject<WSRequest>(wsp.Body);
+            var wSRequest = JsonConvert.DeserializeObject< WSRequest>( wsp.Body .ToString()) ;
+            this.Manager.WebSocketRequestProc(wSRequest);
+          
         }
 
-        /// <summary>
-        /// 处理视频请求
-        /// </summary>
-        /// <param name="request"></param>
-        private void procVideoRequest(WSRequest request)
-        {
-            switch(request.Command)
-            {
-                case WSVideoRequest.OpenWindow:
-                    break;
-                case WSVideoRequest.StartPreview:
-                    break;
-                case WSVideoRequest.StopPreview:
-                    break;
-                case WSVideoRequest.StartPlayback:
-                    break;
-                case WSVideoRequest.StopPlayback:
-                    break;
-                default:
-                    this.LogModule.Error($"不支持的视频指令: {request.Command}");
-                    break;
-
-                       
-            }
-        }
 
         #endregion
     }

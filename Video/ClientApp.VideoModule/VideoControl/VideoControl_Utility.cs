@@ -127,7 +127,11 @@ namespace ClientAPP.VideoModule
         /// <summary>
         /// 播放文件
         /// </summary>
-        PlayFile = 2
+        PlayFile = 2,
+        /// <summary>
+        /// 停止
+        /// </summary>
+        Stop=10
     }
 
   
@@ -251,7 +255,7 @@ namespace ClientAPP.VideoModule
         /// <summary>
         /// 停止下载录像
         /// </summary>
-        PB__StopDownload = 114,
+        PB_StopDownload = 114,
 
         /// <summary>
         /// 标题栏按下

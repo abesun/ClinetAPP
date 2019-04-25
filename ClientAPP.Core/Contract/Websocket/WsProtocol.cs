@@ -19,7 +19,7 @@ namespace ClientAPP.Core.Contract.Websocket
         /// <summary>
         /// 协议内容
         /// </summary>
-        public string Body { get; set; }
+        public object Body { get; set; }
 
         /// <summary>
         /// 转化成json字符串

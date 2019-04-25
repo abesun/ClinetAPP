@@ -45,7 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HikPlayAPI.cs" />
-    <Compile Include="Hik_Open8200.cs" />
+    <Compile Include="Hik_Open8200API.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

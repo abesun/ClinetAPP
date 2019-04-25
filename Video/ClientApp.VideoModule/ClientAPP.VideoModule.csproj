@@ -71,6 +71,10 @@
     <Compile Include="VideoSource\VideoSource_HikOpen8200.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\ClientAPP.API\ClientAPP.API.csproj">
+      <Project>{1d7941c0-7790-498c-b771-5fb55a3cf0f9}</Project>
+      <Name>ClientAPP.API</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\ClientAPP.Core\ClientAPP.Core.csproj">
       <Project>{cca14424-61cb-4b97-88e6-d6d38b0bbbaa}</Project>
       <Name>ClientAPP.Core</Name>
@@ -272,6 +276,13 @@
   <ItemGroup>
     <None Include="Resource\停止下载k.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="LayoutConfig.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="VideoModuleConfig.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

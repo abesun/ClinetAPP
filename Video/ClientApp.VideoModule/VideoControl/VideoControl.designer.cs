@@ -101,15 +101,15 @@
             this.panel_Video.AutoSize = true;
             this.panel_Video.BackColor = System.Drawing.Color.Black;
             this.panel_Video.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel_Video.Controls.Add(this.pictureBoxDown);
+            this.panel_Video.Controls.Add(this.pictureBoxLeft);
             this.panel_Video.Controls.Add(this.label_Error);
             this.panel_Video.Controls.Add(this.pictureBoxRightDown);
             this.panel_Video.Controls.Add(this.pictureBoxLeftDown);
             this.panel_Video.Controls.Add(this.pictureBoxRightUp);
             this.panel_Video.Controls.Add(this.pictureBoxLeftUp);
-            this.panel_Video.Controls.Add(this.pictureBoxDown);
             this.panel_Video.Controls.Add(this.pictureBoxRight);
             this.panel_Video.Controls.Add(this.pictureBoxUp);
-            this.panel_Video.Controls.Add(this.pictureBoxLeft);
             this.panel_Video.ForeColor = System.Drawing.Color.White;
             this.panel_Video.Location = new System.Drawing.Point(3, 19);
             this.panel_Video.Margin = new System.Windows.Forms.Padding(1, 18, 1, 1);
@@ -141,7 +141,7 @@
             this.pictureBoxRightDown.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxRightDown.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxRightDown.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxRightDown.Image = ImgResource.右下;
+            this.pictureBoxRightDown.Image = global::ClientAPP.VideoModule.ImgResource.右下;
             this.pictureBoxRightDown.Location = new System.Drawing.Point(230, 75);
             this.pictureBoxRightDown.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxRightDown.Name = "pictureBoxRightDown";
@@ -160,7 +160,7 @@
             this.pictureBoxLeftDown.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxLeftDown.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxLeftDown.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxLeftDown.Image = ImgResource.左下;
+            this.pictureBoxLeftDown.Image = global::ClientAPP.VideoModule.ImgResource.左下;
             this.pictureBoxLeftDown.Location = new System.Drawing.Point(18, 75);
             this.pictureBoxLeftDown.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxLeftDown.Name = "pictureBoxLeftDown";
@@ -179,7 +179,7 @@
             this.pictureBoxRightUp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxRightUp.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxRightUp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxRightUp.Image = ImgResource.右上;
+            this.pictureBoxRightUp.Image = global::ClientAPP.VideoModule.ImgResource.右上;
             this.pictureBoxRightUp.Location = new System.Drawing.Point(230, 16);
             this.pictureBoxRightUp.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxRightUp.Name = "pictureBoxRightUp";
@@ -198,7 +198,7 @@
             this.pictureBoxLeftUp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxLeftUp.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxLeftUp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxLeftUp.Image = ImgResource.左上;
+            this.pictureBoxLeftUp.Image = global::ClientAPP.VideoModule.ImgResource.左上;
             this.pictureBoxLeftUp.Location = new System.Drawing.Point(18, 16);
             this.pictureBoxLeftUp.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxLeftUp.Name = "pictureBoxLeftUp";
@@ -217,7 +217,7 @@
             this.pictureBoxDown.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxDown.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxDown.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxDown.Image = ImgResource.下;
+            this.pictureBoxDown.Image = global::ClientAPP.VideoModule.ImgResource.下;
             this.pictureBoxDown.Location = new System.Drawing.Point(127, 75);
             this.pictureBoxDown.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxDown.Name = "pictureBoxDown";
@@ -236,7 +236,7 @@
             this.pictureBoxRight.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxRight.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxRight.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxRight.Image = ImgResource.右;
+            this.pictureBoxRight.Image = global::ClientAPP.VideoModule.ImgResource.右;
             this.pictureBoxRight.Location = new System.Drawing.Point(230, 45);
             this.pictureBoxRight.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxRight.Name = "pictureBoxRight";
@@ -255,7 +255,7 @@
             this.pictureBoxUp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxUp.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxUp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxUp.Image = ImgResource.上;
+            this.pictureBoxUp.Image = global::ClientAPP.VideoModule.ImgResource.上;
             this.pictureBoxUp.Location = new System.Drawing.Point(127, 16);
             this.pictureBoxUp.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxUp.Name = "pictureBoxUp";
@@ -274,7 +274,7 @@
             this.pictureBoxLeft.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxLeft.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxLeft.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxLeft.Image = ImgResource.左;
+            this.pictureBoxLeft.Image = global::ClientAPP.VideoModule.ImgResource.左;
             this.pictureBoxLeft.Location = new System.Drawing.Point(18, 45);
             this.pictureBoxLeft.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxLeft.Name = "pictureBoxLeft";
@@ -291,7 +291,7 @@
             // panel_PlaybackBar
             // 
             this.panel_PlaybackBar.BackColor = System.Drawing.Color.Silver;
-            this.panel_PlaybackBar.BackgroundImage = ImgResource.图标底图;
+            this.panel_PlaybackBar.BackgroundImage = global::ClientAPP.VideoModule.ImgResource.图标底图;
             this.panel_PlaybackBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel_PlaybackBar.Controls.Add(this.linkLabel_CurTime);
             this.panel_PlaybackBar.Controls.Add(this.label1);
@@ -327,8 +327,8 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(169, 30);
             this.label1.Name = "label1";
@@ -374,7 +374,7 @@
             // pictureBox_StopDownload
             // 
             this.pictureBox_StopDownload.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_StopDownload.Image = ImgResource.停止下载k;
+            this.pictureBox_StopDownload.Image = global::ClientAPP.VideoModule.ImgResource.停止下载k;
             this.pictureBox_StopDownload.Location = new System.Drawing.Point(123, 0);
             this.pictureBox_StopDownload.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox_StopDownload.Name = "pictureBox_StopDownload";
@@ -391,7 +391,7 @@
             // pictureBox_Download
             // 
             this.pictureBox_Download.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_Download.Image = ImgResource.下载k;
+            this.pictureBox_Download.Image = global::ClientAPP.VideoModule.ImgResource.下载k;
             this.pictureBox_Download.Location = new System.Drawing.Point(103, 0);
             this.pictureBox_Download.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox_Download.Name = "pictureBox_Download";
@@ -408,7 +408,7 @@
             // pictureBox_Play
             // 
             this.pictureBox_Play.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_Play.Image = ImgResource.播放k;
+            this.pictureBox_Play.Image = global::ClientAPP.VideoModule.ImgResource.播放k;
             this.pictureBox_Play.Location = new System.Drawing.Point(0, 0);
             this.pictureBox_Play.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox_Play.Name = "pictureBox_Play";
@@ -425,7 +425,7 @@
             // pictureBox_Pause
             // 
             this.pictureBox_Pause.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_Pause.Image = ImgResource.续k;
+            this.pictureBox_Pause.Image = global::ClientAPP.VideoModule.ImgResource.续k;
             this.pictureBox_Pause.Location = new System.Drawing.Point(143, 0);
             this.pictureBox_Pause.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox_Pause.Name = "pictureBox_Pause";
@@ -443,7 +443,7 @@
             // pictureBox_Stop
             // 
             this.pictureBox_Stop.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_Stop.Image = ImgResource.停止k;
+            this.pictureBox_Stop.Image = global::ClientAPP.VideoModule.ImgResource.停止k;
             this.pictureBox_Stop.Location = new System.Drawing.Point(20, 0);
             this.pictureBox_Stop.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox_Stop.Name = "pictureBox_Stop";
@@ -460,7 +460,7 @@
             // pictureBox_Slow
             // 
             this.pictureBox_Slow.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_Slow.Image = ImgResource.慢k;
+            this.pictureBox_Slow.Image = global::ClientAPP.VideoModule.ImgResource.慢k;
             this.pictureBox_Slow.Location = new System.Drawing.Point(43, 0);
             this.pictureBox_Slow.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox_Slow.Name = "pictureBox_Slow";
@@ -477,7 +477,7 @@
             // pictureBox_Fast
             // 
             this.pictureBox_Fast.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_Fast.Image = ImgResource.快k;
+            this.pictureBox_Fast.Image = global::ClientAPP.VideoModule.ImgResource.快k;
             this.pictureBox_Fast.Location = new System.Drawing.Point(63, 0);
             this.pictureBox_Fast.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox_Fast.Name = "pictureBox_Fast";
@@ -494,7 +494,7 @@
             // pictureBox_Step
             // 
             this.pictureBox_Step.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_Step.Image = ImgResource.单帧k;
+            this.pictureBox_Step.Image = global::ClientAPP.VideoModule.ImgResource.单帧k;
             this.pictureBox_Step.Location = new System.Drawing.Point(83, 0);
             this.pictureBox_Step.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox_Step.Name = "pictureBox_Step";
@@ -511,7 +511,7 @@
             // flowLayoutPanel_Title
             // 
             this.flowLayoutPanel_Title.BackColor = System.Drawing.Color.Silver;
-            this.flowLayoutPanel_Title.BackgroundImage = ImgResource.图标底图;
+            this.flowLayoutPanel_Title.BackgroundImage = global::ClientAPP.VideoModule.ImgResource.图标底图;
             this.flowLayoutPanel_Title.Controls.Add(this.pictureBox_Close);
             this.flowLayoutPanel_Title.Controls.Add(this.pictureBox_Zoom);
             this.flowLayoutPanel_Title.Controls.Add(this.pictureBox_Snap);
@@ -539,7 +539,7 @@
             // 
             this.pictureBox_Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox_Close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_Close.Image = ImgResource.关闭k;
+            this.pictureBox_Close.Image = global::ClientAPP.VideoModule.ImgResource.关闭k;
             this.pictureBox_Close.Location = new System.Drawing.Point(511, 0);
             this.pictureBox_Close.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox_Close.Name = "pictureBox_Close";
@@ -556,7 +556,7 @@
             // pictureBox_Zoom
             // 
             this.pictureBox_Zoom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_Zoom.Image = ImgResource.缩放k;
+            this.pictureBox_Zoom.Image = global::ClientAPP.VideoModule.ImgResource.缩放k;
             this.pictureBox_Zoom.Location = new System.Drawing.Point(496, 0);
             this.pictureBox_Zoom.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox_Zoom.Name = "pictureBox_Zoom";
@@ -573,7 +573,7 @@
             // pictureBox_Snap
             // 
             this.pictureBox_Snap.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_Snap.Image = ImgResource.抓图k;
+            this.pictureBox_Snap.Image = global::ClientAPP.VideoModule.ImgResource.抓图k;
             this.pictureBox_Snap.Location = new System.Drawing.Point(481, 0);
             this.pictureBox_Snap.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox_Snap.Name = "pictureBox_Snap";
@@ -590,7 +590,7 @@
             // pictureBoxControl
             // 
             this.pictureBoxControl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxControl.Image = ImgResource.隐藏显示k;
+            this.pictureBoxControl.Image = global::ClientAPP.VideoModule.ImgResource.隐藏显示k;
             this.pictureBoxControl.Location = new System.Drawing.Point(466, 0);
             this.pictureBoxControl.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxControl.Name = "pictureBoxControl";
@@ -619,7 +619,7 @@
             // pictureBox_Sound
             // 
             this.pictureBox_Sound.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_Sound.Image = ImgResource.打开声音k;
+            this.pictureBox_Sound.Image = global::ClientAPP.VideoModule.ImgResource.打开声音k;
             this.pictureBox_Sound.Location = new System.Drawing.Point(436, 0);
             this.pictureBox_Sound.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox_Sound.Name = "pictureBox_Sound";
@@ -650,7 +650,7 @@
             // pictureBox_Lock
             // 
             this.pictureBox_Lock.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_Lock.Image = ImgResource.打开k;
+            this.pictureBox_Lock.Image = global::ClientAPP.VideoModule.ImgResource.打开k;
             this.pictureBox_Lock.Location = new System.Drawing.Point(406, 0);
             this.pictureBox_Lock.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox_Lock.Name = "pictureBox_Lock";
@@ -658,6 +658,7 @@
             this.pictureBox_Lock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_Lock.TabIndex = 7;
             this.pictureBox_Lock.TabStop = false;
+            this.pictureBox_Lock.Visible = false;
             this.pictureBox_Lock.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseClick);
             this.pictureBox_Lock.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_Play_MouseDown);
             this.pictureBox_Lock.MouseEnter += new System.EventHandler(this.SetMoveInPic);
@@ -667,7 +668,7 @@
             // pictureBox_ACing
             // 
             this.pictureBox_ACing.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_ACing.Image = ImgResource.播放k;
+            this.pictureBox_ACing.Image = global::ClientAPP.VideoModule.ImgResource.播放k;
             this.pictureBox_ACing.Location = new System.Drawing.Point(391, 0);
             this.pictureBox_ACing.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox_ACing.Name = "pictureBox_ACing";
@@ -680,7 +681,7 @@
             // pictureBox_FastPlayback
             // 
             this.pictureBox_FastPlayback.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_FastPlayback.Image = ImgResource.播放k;
+            this.pictureBox_FastPlayback.Image = global::ClientAPP.VideoModule.ImgResource.播放k;
             this.pictureBox_FastPlayback.Location = new System.Drawing.Point(376, 0);
             this.pictureBox_FastPlayback.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox_FastPlayback.Name = "pictureBox_FastPlayback";
@@ -699,7 +700,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 10F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panel_PlaybackBar);
             this.Controls.Add(this.flowLayoutPanel_Title);
             this.Controls.Add(this.panel_Video);

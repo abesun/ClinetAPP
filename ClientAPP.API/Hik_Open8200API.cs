@@ -9,8 +9,324 @@ using System.IO;
 using Newtonsoft.Json;
 namespace ClientAPP.API
 {
-    public class Hik_Open8200
+    public class Hik_Open8200API
     {
+        #region C++API方式
+        public const string DllName = "StdClient_Hikvision30.dll";
+        /// <summary>
+        /// 是否初始化
+        /// </summary>
+        private static bool m_init = false;
+
+        /// <summary>
+        /// 登录句柄
+        /// </summary>
+        private static int m_LoginID = -1;
+
+        /// <summary>
+        /// 获得登录ID
+        /// </summary>
+        /// <param name="Ip"></param>
+        /// <param name="port"></param>
+        /// <param name="UserName"></param>
+        /// <param name="Password"></param>
+        /// <returns></returns>
+        public static int GetLoginID(string Ip, int port, string UserName, string Password)
+        {
+            if (m_LoginID >= 0)
+                return m_LoginID;
+
+            if (m_init == false)
+            {
+                int ret = Std_Initialize();
+                if (ret < 0)
+                    return ret;
+            }
+            m_LoginID = Std_Login(Ip, port, UserName, Password);
+            return m_LoginID;
+
+        }
+
+        //初始化业务
+        /// <summary>
+        /// 初始化
+        /// </summary>
+        /// <returns>>=成功</returns>
+        [DllImport(DllName)]
+        private static extern int Std_Initialize();
+
+        /// <summary>
+        /// 反初始化
+        /// </summary>
+        /// <returns></returns>
+        [DllImport(DllName)]
+        public static extern int Std_UnInitialize();
+
+
+        //登录业务
+        /// <summary>
+        /// 登录
+        /// </summary>
+        /// <param name="Host">平台IP地址，最大长度32字节</param>
+        /// <param name="Port">平台端口</param>
+        /// <param name="Username">用户名，最大长度128字节</param>
+        /// <param name="Password">密码，最大长度128字节</param>
+        /// <returns></returns>
+        [DllImport(DllName)]
+        private static extern int Std_Login(string Host, int Port, string Username, string Password);
+
+        /// <summary>
+        /// 登出
+        /// </summary>
+        /// <param name="LoginHandle"></param>
+        /// <returns></returns>
+        [DllImport(DllName)]
+        public static extern int Std_Logout(int LoginHandle);
+
+
+        //实时播放
+        /// <summary>
+        /// 实时浏览
+        /// </summary>
+        /// <param name="LoginHandle"></param>
+        /// <param name="CameraId"></param>
+        /// <param name="PlayWnd"></param>
+        /// <param name="StreamType"></param>
+        /// <param name="CBF_Stream"></param>
+        /// <param name="UserData"></param>
+        /// <returns></returns>
+        [DllImport(DllName)]
+        public static extern int Std_StartRealPlay(int LoginHandle, string CameraId, IntPtr PlayWnd, int StreamType, StreamCallbackPF CBF_Stream, IntPtr UserData);
+
+        /// <summary>
+        /// 停止实时浏览
+        /// </summary>
+        /// <param name="RealHandle"></param>
+        /// <returns></returns>
+        [DllImport(DllName)]
+        public static extern int Std_StopRealPlay(int RealHandle);
+
+
+        [DllImport(DllName)]
+        private static extern int Std_GetLastError(IntPtr ErrorDesc);
+
+        public static string GetLastError()
+        {
+            IntPtr s = Marshal.AllocHGlobal(512);
+            Std_GetLastError(s);
+            byte[] data = new byte[512];
+            Marshal.Copy(s, data, 0, 512);
+            string ret = Encoding.UTF8.GetString(data);
+            ret = ret.Remove(ret.IndexOf('\0'));
+            return ret;
+        }
+
+
+        public delegate void StreamCallbackPF(int RealHandle, int StreamType, IntPtr Data, int DataLen, IntPtr DecoderTag, IntPtr UserData);
+
+        /// <summary>
+        /// 云台控制
+        /// </summary>
+        /// <param name="LoginHandle"></param>
+        /// <param name="CameraId"></param>
+        /// <param name="PtzCmd"></param>
+        /// <param name="Param1"></param>
+        /// <param name="Param2"></param>
+        /// <param name="Param3"></param>
+        /// <returns></returns>
+        [DllImport(DllName)]
+        public static extern int Std_PtzCtrl(int LoginHandle, string CameraId, string PtzCmd, int Param1, int Param2, int Param3);
+
+        /// <summary>
+        /// 云台控制
+        /// </summary>
+        /// <param name="LoginHandle"></param>
+        /// <param name="CameraId"></param>
+        /// <param name="xTop"></param>
+        /// <param name="yTop"></param>
+        /// <param name="xBottom"></param>
+        /// <param name="yBottom"></param>
+        /// <param name="bCounter"></param>
+        /// <returns></returns>
+        [DllImport(DllName)]
+        public static extern int Std_PtzCtrl3D(int LoginHandle, string CameraId, int xTop, int yTop, int xBottom, int yBottom, int bCounter);
+
+        /// <summary>
+        /// 回放
+        /// </summary>
+        /// <param name="LoginHandle"></param>
+        /// <param name="CameraID"></param>
+        /// <param name="BeginTime">开始时间，时间格式 “YYYYMMDDTHHNNSSZ</param>
+        /// <param name="EndTime"></param>
+        /// <param name="StorageDev">(不支持设置，传0即可，自动从平台中查找可用存储介质)</param>
+        /// <param name="playWnd"></param>
+        /// <param name="CBF_Stream">实时流回调函数的地址，允许为NULL</param>
+        /// <param name="UserData"></param>
+        /// <returns></returns>
+        [DllImport(DllName)]
+        public static extern int Std_StreamReplayByTime(int LoginHandle, string CameraID, string BeginTime, string EndTime, int StorageDev, IntPtr playWnd, StreamCallbackPF CBF_Stream, IntPtr UserData);
+
+        /// <summary>
+        /// 停止回放
+        /// </summary>
+        /// <param name="ReplayHandle"></param>
+        /// <returns></returns>
+        [DllImport(DllName)]
+        public static extern int Std_StopStreamReplay(int ReplayHandle);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ReplayHandle"></param>
+        /// <param name="ReplayMode"></param>
+        /// <returns></returns>
+        [DllImport(DllName)]
+        public static extern int Std_StreamReplayControl(int ReplayHandle, ReplayMode ReplayMode);
+
+        /// <summary>
+        /// 回放模式
+        /// </summary>
+        public enum ReplayMode
+        {
+            PLAYMODE_STOP = 1,
+            PLAYMODE_PAUSE = 2,
+            PLAYMODE_RESUME = 3,
+            PLAYMODE_ONEBYONE = 4,
+            PLAYMODE_ONEBYONEBACK = 5,
+            PLAYMODE_16_BACKWARD = 6,
+            PLAYMODE_8_BACKWARD = 7,
+            PLAYMODE_4_BACKWARD = 8,
+            PLAYMODE_2_BACKWARD = 9,
+            PLAYMODE_1_BACKWARD = 10,
+            PLAYMODE_HALF_BACKWARD = 11,
+            PLAYMODE_QUARTER_BACKWARD = 12,
+            PLAYMODE_Eighth_BACKWARD = 13,
+            PLAYMODE_Eighth_FORWARD = 14,
+            PLAYMODE_QUARTER_FORWARD = 15,
+            PLAYMODE_HALF_FORWARD = 16,
+            PLAYMODE_1_FORWARD = 17,
+            PLAYMODE_2_FORWARD = 18,
+            PLAYMODE_4_FORWARD = 19,
+            PLAYMODE_8_FORWARD = 20
+            //PLAYMODE_16_FORWARD = 21
+        }
+
+
+        [DllImport(DllName)]
+        public static extern int Std_GetFileReplayPos(int ReplayHandle, ref int PlayTimed);
+
+
+        [DllImport(DllName)]
+        public static extern int Std_SetStreamReplayPos(int ReplayHandle, int PlayTimed);
+
+        [DllImport(DllName)]
+        public static extern int Std_StartDownloadByTime(int LoginHandle, string CameraID, string BeginTime, string EndTime, int StorageDev, ref int DownloadSpeed, string filename, byte[] fileExt, int fileExtLen);
+
+
+        [DllImport(DllName, EntryPoint = "Std_StartDownloadByTime")]
+        public static extern int Std_StartDownloadByTime2(int LoginHandle, string CameraID, string BeginTime, string EndTime, int StorageDev, ref int DownloadSpeed, IntPtr filename, byte[] fileExt, int fileExtLen);
+
+        [DllImport(DllName)]
+        public static extern int Std_StopDownload(int DownloadHandle);
+
+        /// <summary>
+        /// 打开声音
+        /// </summary>
+        /// <param name="PlayHandle"></param>
+        /// <returns></returns>
+        [DllImport(DllName)]
+        public static extern int Std_OpenSound(long PlayHandle);
+        /// <summary>
+        /// 关闭声音
+        /// </summary>
+        /// <param name="PlayHandle"></param>
+        /// <returns></returns>
+        [DllImport(DllName)]
+        public static extern int Std_CloseSound(long PlayHandle);
+
+
+        /// <summary>
+        /// 本地录像
+        /// </summary>
+        /// <param name="RealHandle"></param>
+        /// <param name=""></param>
+        /// <returns></returns>
+        [DllImport(DllName)]
+        public static extern int Std_StartLocalRecord(long RealHandle, IntPtr FileName, IntPtr FileExt, int FileExtLen);
+
+        /// <summary>
+        /// 停止本地录像
+        /// </summary>
+        [DllImport(DllName)]
+        public static extern int Std_StopLocalRecord(long RealHandle);
+
+        /// <summary>
+        /// 抓图
+        /// </summary>
+        /// <param name="PlayHandle"></param>
+        /// <param name="PicFile"></param>
+        /// <param name="PicFormat"></param>
+        /// <returns></returns>
+        [DllImport(DllName)]
+        public static extern int Std_Capture(int PlayHandle, string PicFile, int PicFormat);
+
+        /// <summary>
+        /// 抓图
+        /// </summary>
+        /// <param name="PlayHandle"></param>
+        /// <param name="PicFile"></param>
+        /// <param name="PicFormat"></param>
+        /// <returns></returns>
+        [DllImport(DllName, EntryPoint = "Std_Capture")]
+        public static extern int Std_Capture2(int PlayHandle, IntPtr PicFile, int PicFormat);
+
+
+        public delegate void OrgInfoCallBackPF(int getResHandle, ref int iContinue, int iFinish, string FileListXML, IntPtr UserData);
+        public delegate void OrgInfoCallBackPF2(int getResHandle, ref int iContinue, int iFinish, IntPtr FileListXML, IntPtr UserData);
+        //获取资源列表
+        [DllImport(DllName)]
+        public static extern int Std_GetResList(int LoginHandle, int ResType, string ParentOrgCode, OrgInfoCallBackPF OrgInfoCBF, IntPtr UserData);
+        [DllImport(DllName, EntryPoint = "Std_GetResList")]
+        public static extern int Std_GetResList2(int LoginHandle, int ResType, string ParentOrgCode, OrgInfoCallBackPF2 OrgInfoCBF, IntPtr UserData);
+        //获取摄像机信息
+        [DllImport(DllName)]
+        public static extern int Std_GetCameraInfo(int LoginHandle, string CameraId, out string CameraInfo);
+
+        /// <summary>
+        /// 获得下载进度
+        /// </summary>
+        /// <param name="DownloadHandle"></param>
+        /// <returns></returns>
+        [DllImport(DllName)]
+        public static extern int Std_GetDownloadPos(int DownloadHandle);
+
+        public static string GetTimeString(DateTime time)
+        {
+            return time.ToString("yyyyMMddTHHmmssZ");
+        }
+
+        public static string GetUTF8String(string s)
+        {
+            byte[] data = Encoding.UTF8.GetBytes(s);
+            string ret = Encoding.Default.GetString(data);
+            ret += "\0";
+            return ret;
+        }
+
+        public static IntPtr GetUTF8StringPtr(string s)
+        {
+
+            byte[] data = Encoding.UTF8.GetBytes(s);
+            IntPtr ret = Marshal.AllocHGlobal(data.Length + 1);
+            Marshal.Copy(data, 0, ret, data.Length);
+            Marshal.WriteByte(ret, data.Length, 0);
+            return ret;
+        }
+
+        #endregion
+
+
+        #region rest方式
         /// <summary>
         /// 根据监控点编号获取视频预览url
         /// </summary>
@@ -516,6 +832,8 @@ namespace ClientAPP.API
                 return sb;
             }
         }
+
+        #endregion
 
         #endregion
     }

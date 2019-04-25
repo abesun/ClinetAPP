@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<VideoConfig>
+  <ScreenCount>0</ScreenCount>
+  <SnapPath>C:\抓图</SnapPath>
+  <SnapFilePattern></SnapFilePattern>
+  <RecordPath>c:\录像</RecordPath>
+  <RecordFilePattern></RecordFilePattern>
+  <AutoCloseSameVideo>false</AutoCloseSameVideo>
+  <AutoChangeStreamIndex>false</AutoChangeStreamIndex>
+  <VideoControlConfig>
+    <HideVCTitle>false</HideVCTitle>
+    <ShowDownload>true</ShowDownload>
+    <ShowFastPlayback>false</ShowFastPlayback>
+    <AutoHideVCTitle>false</AutoHideVCTitle>
+    <Margin>1</Margin>
+    <AutoRefreshControl>true</AutoRefreshControl>
+    <!--<BackColorRGB>#FFFFFF</BackColorRGB>
+    <VideoPanelColorRGB>#FFFFFF</VideoPanelColorRGB>
+    <SelectedColorRGB>#00FF00</SelectedColorRGB>-->
+  </VideoControlConfig>
+  <FormStyleConfig>
+    <AutoLoad>true</AutoLoad>
+    <X>0</X>
+    <Y>0</Y>
+    <Width>800</Width>
+    <Height>600</Height>
+  </FormStyleConfig>
+</VideoConfig>

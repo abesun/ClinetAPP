@@ -68,6 +68,8 @@ namespace ClientAPP.VideoModule
         /// </summary>
         private CameraInfo m_LastCamera;
 
+        private List<PictureBox> m_ControlButtonList = new List<PictureBox>();
+
         #region 画框相关
         /// <summary>
         /// 是否在回调函数中画矩形
@@ -107,6 +109,10 @@ namespace ClientAPP.VideoModule
 
         #region 属性
 
+        /// <summary>
+        /// 所属面板id
+        /// </summary>
+        public string VideoPanelID { get; set; }
         /// <summary>
         /// 是否最大化
         /// </summary>
@@ -205,14 +211,18 @@ namespace ClientAPP.VideoModule
                 this.m_PlayMode = value;
                 switch (value)
                 {
-                    case ShowMode.Real:
+                    case ShowMode.Real:                        
                         this.ShowPlaybackBar = false;
-                        this.pictureBox_FastPlayback.Visible = true;
+                        //this.pictureBox_FastPlayback.Visible = true;
                         break;
                     case ShowMode.Playback:
                     case ShowMode.PlayFile:
                         this.ShowPlaybackBar = true;
-                        this.pictureBox_FastPlayback.Visible = false;
+                        //this.pictureBox_FastPlayback.Visible = false;
+                        break;
+                    default:
+                        this.ShowPlaybackBar = false;
+                        //this.pictureBox_FastPlayback.Visible = true;
                         break;
                 }
             }
@@ -524,6 +534,9 @@ namespace ClientAPP.VideoModule
                 c.MouseWheel += new MouseEventHandler(this.panel_Video_MouseWheel);
                 c.PreviewKeyDown += new PreviewKeyDownEventHandler(this.panel_Video_PreviewKeyDown);
             }
+
+            this.m_ControlButtonList = new List<PictureBox>() { this.pictureBoxLeft, this.pictureBoxLeftDown, this.pictureBoxLeftUp,
+            this.pictureBoxUp, this.pictureBoxDown, this.pictureBoxRight,this.pictureBoxRightDown,this.pictureBoxRightUp};
         }
 
         void panel_Video_DragDrop(object sender, DragEventArgs e)
@@ -1339,7 +1352,7 @@ namespace ClientAPP.VideoModule
         {
             if (this.ActionEvent == null)
                 return;
-
+            
             PictureBox pb = sender as PictureBox;
 
             VideoControlActionEventArgs voe = new VideoControlActionEventArgs() { Camera = this.CurrentCamera, VControl = this };
@@ -1410,7 +1423,7 @@ namespace ClientAPP.VideoModule
             else if (pb == this.pictureBox_Download)
                 voe.Type = VideoControlAction.PB_StratDownload;
             else if (pb == this.pictureBox_StopDownload)
-                voe.Type = VideoControlAction.PB__StopDownload;
+                voe.Type = VideoControlAction.PB_StopDownload;
             else if (pb == this.pictureBox_Sound)
             {
                 if (this.m_OpenSound == true)
@@ -1582,14 +1595,16 @@ namespace ClientAPP.VideoModule
 
             this.ShowPtzButton =! this.ShowPtzButton;
             setArrowButtonSize();
-            this.pictureBoxLeft.Visible = !this.pictureBoxLeft.Visible;
-            this.pictureBoxRight.Visible = !this.pictureBoxRight.Visible;
-            this.pictureBoxUp.Visible = !this.pictureBoxUp.Visible;
-            this.pictureBoxDown.Visible = !this.pictureBoxDown.Visible;
-            this.pictureBoxLeftUp.Visible = !this.pictureBoxLeftUp.Visible;
-            this.pictureBoxRightUp.Visible = !this.pictureBoxRightUp.Visible;
-            this.pictureBoxLeftDown.Visible = !this.pictureBoxLeftDown.Visible;
-            this.pictureBoxRightDown.Visible = !this.pictureBoxRightDown.Visible;
+
+            this.m_ControlButtonList.ForEach(c => { c.Visible = !c.Visible; c.BringToFront(); });
+            //this.pictureBoxLeft.Visible = !this.pictureBoxLeft.Visible;
+            //this.pictureBoxRight.Visible = !this.pictureBoxRight.Visible;
+            //this.pictureBoxUp.Visible = !this.pictureBoxUp.Visible;
+            //this.pictureBoxDown.Visible = !this.pictureBoxDown.Visible;
+            //this.pictureBoxLeftUp.Visible = !this.pictureBoxLeftUp.Visible;
+            //this.pictureBoxRightUp.Visible = !this.pictureBoxRightUp.Visible;
+            //this.pictureBoxLeftDown.Visible = !this.pictureBoxLeftDown.Visible;
+            //this.pictureBoxRightDown.Visible = !this.pictureBoxRightDown.Visible;
 
 
             if (ShowPtzButton == true)

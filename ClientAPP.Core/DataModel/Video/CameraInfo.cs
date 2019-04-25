@@ -36,5 +36,10 @@ namespace ClientAPP.Core.DataModel.Video
         /// </summary>
         public string CameraCode { get; set; }
 
+        /// <summary>
+        /// 视频源信息
+        /// </summary>
+        public VideoSourceInfo VideoSourceInfo { get; set; }
+
     }
 }

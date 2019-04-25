@@ -26,6 +26,8 @@ namespace ClientAPP.Core.Contract.Websocket
         public const string StopPlayback = "StopPlayback";
 
         public const string OpenWindow = "OpenWindow";
+
+        public const string CloseWindow = "CloseWindow";
         #endregion
     }
 
@@ -37,40 +39,40 @@ namespace ClientAPP.Core.Contract.Websocket
         /// <summary>
         /// 宽度
         /// </summary>
-        public int Width { get; set; } = 800;
+        public int? Width { get; set; } = 800;
 
         /// <summary>
         /// 高度
         /// </summary>
-        public int Height { get; set; } = 600;
+        public int? Height { get; set; } = 600;
 
         /// <summary>
         /// 起始X坐标
         /// </summary>
-        public int LocationX { get; set; } = 100;
+        public int? LocationX { get; set; } = 100;
 
         /// <summary>
         /// 起始Y坐标
         /// </summary>
-        public int LocationY { get; set; } = 100;
+        public int? LocationY { get; set; } = 100;
 
         /// <summary>
         /// 屏幕号
         /// </summary>
-        public int ScreenID { get; set; } = 0;
+        public int? ScreenID { get; set; } = 0;
 
         /// <summary>
         /// 总在最前
         /// </summary>
-        public bool TopMost { get; set; } = true;
+        public bool? TopMost { get; set; } = true;
         /// <summary>
         /// 显示窗口边框
         /// </summary>
-        public bool ShowWindowBorder { get; set; } = true;
+        public bool? ShowWindowBorder { get; set; } = true;
         /// <summary>
         /// 显示视频画面的标题栏
         /// </summary>
-        public bool ShowVCTitle { get; set; } = true;
+        public bool? ShowVCTitle { get; set; } = true;
 
         /// <summary>
         /// 布局名称
@@ -97,7 +99,7 @@ namespace ClientAPP.Core.Contract.Websocket
         /// </summary>
         public string CameraName { get; set; }
         /// <summary>
-        /// 数据源ID
+        /// 视频源ID
         /// </summary>
         public string SourceID { get; set; }
         /// <summary>
@@ -118,6 +120,16 @@ namespace ClientAPP.Core.Contract.Websocket
         public string SourcePassword { get; set; }
 
         /// <summary>
+        /// 视频源名称
+        /// </summary>
+        public string SourceName { get; set; }
+
+        /// <summary>
+        /// 视频源类型
+        /// </summary>
+        public int SourceType { get; set; }
+
+        /// <summary>
         /// 通道号/第三方系统编号/打开视频需要的编码
         /// </summary>
         public string CameraCode { get; set; }
@@ -130,7 +142,7 @@ namespace ClientAPP.Core.Contract.Websocket
     /// <summary>
     /// 关闭视频
     /// </summary>
-    public class WSVideoRequest_StopVideo
+    public class WSVideoRequest_StopVideo: WSVideoRequest
     {
         public int VCIndex { get; set; }
     }
@@ -172,6 +184,16 @@ namespace ClientAPP.Core.Contract.Websocket
         /// 密码
         /// </summary>
         public string SourcePassword { get; set; }
+
+        /// <summary>
+        /// 视频源名称
+        /// </summary>
+        public string SourceName { get; set; }
+
+        /// <summary>
+        /// 视频源类型
+        /// </summary>
+        public int SourceType { get; set; }
 
         /// <summary>
         /// 通道号/第三方系统编号/打开视频需要的编码
