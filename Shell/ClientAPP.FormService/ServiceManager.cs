@@ -82,5 +82,15 @@ namespace ClientAPP.FormService
                     break;
             }
         }
+
+
+        /// <summary>
+        /// 事件上报处理
+        /// </summary>
+        /// <param name="wsp"></param>
+        public void EventUploadProc(WSProtocol wsp)
+        {
+            this.WebsocketHelper.SendEvent(wsp);
+        }
     }
 }

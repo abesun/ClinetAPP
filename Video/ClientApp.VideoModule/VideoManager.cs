@@ -140,7 +140,7 @@ namespace ClientAPP.VideoModule
             if (vc.Locked == true)//图像被锁定
                 return false;
 
-
+            vc.ErrorMessage = "";
 
             this.LogModule?.Debug($"准备打开实时预览: ({camera.ID}){camera.Name} 设备:{videoSourceInfo.IP}:{videoSourceInfo.Port} 连接码:{camera.CameraCode}");
 
@@ -157,7 +157,15 @@ namespace ClientAPP.VideoModule
                 return false;
             }
             camera.VideoSourceInfo = videoSourceInfo;
-            return vs.StartPreview(camera, vc, streamIndex);
+            bool ret= vs.StartPreview(camera, vc, streamIndex);
+            if (ret == true)
+            {
+                vc.Mode = ShowMode.Real;
+                this.m_VideoControlTable[vc] = vs;
+                vc.CurrentCamera = camera;
+                
+            }
+            return ret;
 
         }
 
@@ -167,6 +175,7 @@ namespace ClientAPP.VideoModule
                 return false;
             this.LogModule?.Debug($"准备打开回放: ({camera.ID}){camera.Name} 设备:{videoSourceInfo.IP}:{videoSourceInfo.Port} 连接码:{camera.CameraCode} 时间:{start}--{end}");
 
+            vc.ErrorMessage = "";
             //关闭已经打开的视频
             if (vc.Mode != ShowMode.Stop)
             {
@@ -180,7 +189,14 @@ namespace ClientAPP.VideoModule
                 return false;
             }
             camera.VideoSourceInfo = videoSourceInfo;
-            return vs.StartPlaybackByTime(camera, vc, start, end);
+            bool ret= vs.StartPlaybackByTime(camera, vc, start, end);
+            if (ret == true)
+            {
+                vc.Mode = ShowMode.Playback;
+                this.m_VideoControlTable[vc] = vs;
+                vc.CurrentCamera = camera;
+            }
+            return ret;
         }
 
         /// <summary>
@@ -203,6 +219,9 @@ namespace ClientAPP.VideoModule
                     
             }
             vc.Mode = ShowMode.Stop;
+            vc.CurrentCamera = null;
+            this.m_VideoControlTable[vc] = null;
+            vc.ErrorMessage = "";
         }
 
         /// <summary>

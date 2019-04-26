@@ -53,6 +53,7 @@ namespace ClientAPP.FormService.Video
                 case WSVideoRequest.StopPreview:
                     break;
                 case WSVideoRequest.StartPlayback:
+                    this.procVideo_StartPlayback(request);
                     break;
                 case WSVideoRequest.StopPlayback:
                     break;
@@ -64,8 +65,10 @@ namespace ClientAPP.FormService.Video
             }
         }
 
+   
 
-        
+
+
         /// <summary>
         /// 打开视频窗口
         /// </summary>
@@ -150,7 +153,7 @@ namespace ClientAPP.FormService.Video
             this.VideoManager.StopVideo(vc);
         }
 
-        private void startPlayback(WSRequest request)
+        private void procVideo_StartPlayback(WSRequest request)
         {
             var req = JsonConvert.DeserializeObject<WSVideoRequest_StartPlayback>(request.Params.ToString());
 
@@ -178,6 +181,7 @@ namespace ClientAPP.FormService.Video
                 this.LogModule.Error("找不到指定控件");
                 return;
             }
+            this.VideoManager.StartPlayback(cameraInfo, videoSourceInfo, vc, req.StartTime, req.EndTime);
             
         }
 

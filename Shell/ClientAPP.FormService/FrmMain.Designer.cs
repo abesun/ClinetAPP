@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip_Icon = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.显示日志窗口ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出QToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip_VC = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.关闭窗口ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,7 +59,8 @@
             this.开始电子放大ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
             this.打开下载列表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.显示日志窗口ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.测试功能ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.上传图片ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip_Icon.SuspendLayout();
             this.contextMenuStrip_VC.SuspendLayout();
             this.SuspendLayout();
@@ -74,9 +76,17 @@
             // 
             this.contextMenuStrip_Icon.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.显示日志窗口ToolStripMenuItem,
+            this.测试功能ToolStripMenuItem,
             this.退出QToolStripMenuItem});
             this.contextMenuStrip_Icon.Name = "contextMenuStrip1";
-            this.contextMenuStrip_Icon.Size = new System.Drawing.Size(181, 70);
+            this.contextMenuStrip_Icon.Size = new System.Drawing.Size(181, 92);
+            // 
+            // 显示日志窗口ToolStripMenuItem
+            // 
+            this.显示日志窗口ToolStripMenuItem.Name = "显示日志窗口ToolStripMenuItem";
+            this.显示日志窗口ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.显示日志窗口ToolStripMenuItem.Text = "显示日志窗口";
+            this.显示日志窗口ToolStripMenuItem.Click += new System.EventHandler(this.显示日志窗口ToolStripMenuItem_Click);
             // 
             // 退出QToolStripMenuItem
             // 
@@ -261,12 +271,20 @@
             this.打开下载列表ToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.打开下载列表ToolStripMenuItem.Text = "打开下载列表";
             // 
-            // 显示日志窗口ToolStripMenuItem
+            // 测试功能ToolStripMenuItem
             // 
-            this.显示日志窗口ToolStripMenuItem.Name = "显示日志窗口ToolStripMenuItem";
-            this.显示日志窗口ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.显示日志窗口ToolStripMenuItem.Text = "显示日志窗口";
-            this.显示日志窗口ToolStripMenuItem.Click += new System.EventHandler(this.显示日志窗口ToolStripMenuItem_Click);
+            this.测试功能ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.上传图片ToolStripMenuItem});
+            this.测试功能ToolStripMenuItem.Name = "测试功能ToolStripMenuItem";
+            this.测试功能ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.测试功能ToolStripMenuItem.Text = "测试功能";
+            // 
+            // 上传图片ToolStripMenuItem
+            // 
+            this.上传图片ToolStripMenuItem.Name = "上传图片ToolStripMenuItem";
+            this.上传图片ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.上传图片ToolStripMenuItem.Text = "上传图片";
+            this.上传图片ToolStripMenuItem.Click += new System.EventHandler(this.上传图片ToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
@@ -313,6 +331,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
         private System.Windows.Forms.ToolStripMenuItem 打开下载列表ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 显示日志窗口ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 测试功能ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 上传图片ToolStripMenuItem;
     }
 }
 

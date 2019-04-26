@@ -11,7 +11,7 @@
             var img=document.getElementById('FingerImg');
             wsImpl = window.WebSocket || window.MozWebSocket;
 
-            inc.innerHTML += "connecting to server ..<br/>";
+            inc.innerHTML += "正在连接视频服务 ..<br/>";
 
            
             // create a new websocket and connect
@@ -21,16 +21,16 @@
             ws.onmessage = function (evt) {
 
                 var cmdobj = JSON.parse(evt.data);
-                switch(cmdobj.cmdType)
+                switch(cmdobj.Body.EventType)
                 {
-                    case "FingerImg":
-                    img.setAttribute( 'src','data:image/png;base64,'+cmdobj.ImgData);
+                    case "FaceImg":
+                    img.setAttribute( 'src','data:image/png;base64,'+cmdobj.Body.Params.FileData_Base64);
                    
                     break;
                     default:
-                inc.innerHTML += evt.data + '<br/>';
                     break;
                 }
+                inc.innerHTML += '接收到数据: ' + evt.data + '<br/>';
             };
 
             // when the connection is established, this method is called
@@ -64,10 +64,10 @@
         }
 
         function startPreview(){
-            sendText('{"Header":{"Ver":"1.0","SN":"1","Time":"2019-04-26 00:42:53","UserTag":null,"BodyType":0},"Body":{"Module":"video","Command":"StartPreview","Params":{"VCIndex":0,"CameraID":"1","CameraName":"测试","SourceID":"1","SourceIP":"192.168.0.1","SourcePort":9000,"SourceUser":"admin","SourcePassword":"password","SourceName":"海康8200","SourceType":200,"CameraCode":"","StreamIndex":0,"PanelID":"1"},"Sync":true,"RequestSN":"1"}}');
+            sendText('{"Header":{"Ver":"1.0","SN":"1","Time":"2019-04-26 00:42:53","UserTag":null,"BodyType":0},"Body":{"Module":"video","Command":"StartPreview","Params":{"VCIndex":0,"CameraID":"1","CameraName":"测试","SourceID":"1","SourceIP":"32.81.118.12","SourcePort":443,"SourceUser":"25130676","SourcePassword":"H2iPvIo9l1z8Uh60tiPL","SourceName":"海康8200","SourceType":200,"CameraCode":"32058282001310034407","StreamIndex":0,"PanelID":"1"},"Sync":true,"RequestSN":"1"}}');
         }
         function startPlayback() {
-            sendText('{"Header":{"Ver":"1.0","SN":"1","Time":"2019-04-26 00:51:24","UserTag":null,"BodyType":0},"Body":{"Module":"video","Command":"StartPlayback","Params":{"VCIndex":0,"CameraID":"1","CameraName":"测试","SourceID":"1","SourceIP":"192.168.0.1","SourcePort":9000,"SourceUser":"admin","SourcePassword":"password","SourceName":"海康8200","SourceType":200,"CameraCode":"","StartTime":"2019-04-25T23:51:24.0628638+08:00","EndTime":"2019-04-26T00:51:24.0628638+08:00","PanelID":"1"},"Sync":true,"RequestSN":"1"}}');
+            sendText('{"Header":{"Ver":"1.0","SN":"1","Time":"2019-04-26 00:51:24","UserTag":null,"BodyType":0},"Body":{"Module":"video","Command":"StartPlayback","Params":{"VCIndex":0,"CameraID":"1","CameraName":"测试","SourceID":"1","SourceIP":"32.81.118.12","SourcePort":443,"SourceUser":"25130676","SourcePassword":"H2iPvIo9l1z8Uh60tiPL","SourceName":"海康8200","SourceType":200,"CameraCode":"32058282001310034407","StartTime":"2019-04-25T23:51:24.0628638+08:00","EndTime":"2019-04-26T00:51:24.0628638+08:00","PanelID":"1"},"Sync":true,"RequestSN":"1"}}');
         }
 
 window.onload = start;

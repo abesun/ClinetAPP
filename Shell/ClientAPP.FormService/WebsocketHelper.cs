@@ -59,6 +59,15 @@ namespace ClientAPP.FormService
         }
 
         /// <summary>
+        /// 发送事件
+        /// </summary>
+        /// <param name="wsp"></param>
+        public void SendEvent(WSProtocol wsp)
+        {
+            this.SendMessage(JsonConvert.SerializeObject(wsp));
+        }
+
+        /// <summary>
         /// 发送消息
         /// </summary>
         /// <param name="msg"></param>
@@ -125,6 +134,8 @@ namespace ClientAPP.FormService
                 default:break;
             }
         }
+
+
 
         #region 请求处理
 

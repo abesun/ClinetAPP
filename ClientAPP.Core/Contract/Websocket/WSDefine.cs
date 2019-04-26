@@ -24,4 +24,15 @@ namespace ClientAPP.Core.Contract.Websocket
 
         #endregion
     }
+
+    /// <summary>
+    /// 事件类型
+    /// </summary>
+    public class WSEventDefine
+    {
+        /// <summary>
+        /// 人脸图像
+        /// </summary>
+        public const string FaceImg = "FaceImg";
+    }
 }

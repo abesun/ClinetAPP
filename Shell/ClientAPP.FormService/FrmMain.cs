@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using log4net;
+
 namespace ClientAPP.FormService
 {
     public partial class FrmMain : Form
@@ -56,5 +57,19 @@ namespace ClientAPP.FormService
             FrmLog.Visible = menu.Checked;
            
         }
+
+        #region 测试
+        private void 上传图片ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if(openFileDialog.ShowDialog()== DialogResult.OK)
+            {
+                string fileName = openFileDialog.FileName;
+                var wsp= Plugins.FileUpload.GetUploadPicWSP(fileName);
+                this.m_Manager.EventUploadProc(wsp);
+            }
+        }
+
+        #endregion
     }
 }
