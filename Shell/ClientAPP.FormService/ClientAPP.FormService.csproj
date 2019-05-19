@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>ClientAPP.FormService</RootNamespace>
     <AssemblyName>ClientAPP.FormService</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -133,6 +133,10 @@
     <ProjectReference Include="..\..\Video\ClientApp.VideoModule\ClientAPP.VideoModule.csproj">
       <Project>{22849707-9a6b-457a-a89c-8471ee66ae59}</Project>
       <Name>ClientAPP.VideoModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\UploadFacePic\UploadFacePic\UploadFacePic.csproj">
+      <Project>{f51f7ec4-2a37-4caa-8cfb-68c7d1a536c7}</Project>
+      <Name>UploadFacePic</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

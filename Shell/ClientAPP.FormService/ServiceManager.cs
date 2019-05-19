@@ -7,6 +7,7 @@ using ClientAPP.VideoModule;
 using ClientAPP.Core.Contract.Log;
 using ClientAPP.Core.Contract.Websocket;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace ClientAPP.FormService
 {
@@ -33,6 +34,8 @@ namespace ClientAPP.FormService
         /// 主窗口
         /// </summary>
         private Form frmMain;
+
+        private UploadFacePic.FrmPickFace frmPickFace;
         
 
         public bool Init(Form frm)
@@ -51,9 +54,17 @@ namespace ClientAPP.FormService
             this.WebsocketHelper = new WebsocketHelper() { LogModule = this.LogModule, Manager = this };
             this.WebsocketHelper.Init();
 
-
+            this.frmPickFace = new UploadFacePic.FrmPickFace();
+            this.frmPickFace.FaceDetected += FrmPickFace_FaceDetected;
 
             return true;
+        }
+
+        private void FrmPickFace_FaceDetected(object sender, UploadFacePic.FaceDetectEventArgs args)
+        {
+            args.FaceImage.Save("uploadtemp.jgp");
+            var wsp = Plugins.FileUpload.GetUploadPicWSP("uploadtemp.jgp");
+            this.EventUploadProc(wsp);
         }
 
         /// <summary>
@@ -64,10 +75,27 @@ namespace ClientAPP.FormService
         {
             this.LogModule.Info("初始化视频模块");
             videoManager = new VideoManager() { LogModule = this.LogModule };
+            videoManager.SnapEvent += VideoManager_SnapEvent;
             return videoManager.Init();
             
         }
 
+        private void VideoManager_SnapEvent(object sender, VideoModule.Event.SnapEventArgs args)
+        {
+            Image img = default;
+            try
+            {
+                img = Image.FromFile(args.FileName);
+            }
+            catch(Exception ex)
+            {
+                //todo 
+                this.LogModule.Error($"文件未能转化为图片: {args.FileName}  错误: {ex.Message}");
+                return;
+            }
+            this.frmPickFace.SetPicFile(img);
+            this.frmPickFace.ShowDialog();
+        }
 
         public void WebSocketRequestProc(WSRequest request)
         {

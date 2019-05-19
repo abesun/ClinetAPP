@@ -68,6 +68,10 @@ namespace ClientAPP.VideoModule
         }
 
         #region 外部接口
+
+        #region 事件
+        public event Event.SnapEventHandle SnapEvent;
+        #endregion
         /// <summary>
         /// 初始化
         /// </summary>
@@ -195,6 +199,7 @@ namespace ClientAPP.VideoModule
                 vc.Mode = ShowMode.Playback;
                 this.m_VideoControlTable[vc] = vs;
                 vc.CurrentCamera = camera;
+                vc.PBStatus = VideoControl.PB_Status.Play;
             }
             return ret;
         }
@@ -214,6 +219,8 @@ namespace ClientAPP.VideoModule
                 case ShowMode.Playback:
                 case ShowMode.PlayFile:
                     vs?.StopPlayback(vc);
+                    
+                    vc.PBStatus = VideoControl.PB_Status.BeforeStart;
                     break;
                 default:break;
                     
@@ -317,12 +324,15 @@ namespace ClientAPP.VideoModule
                     break;
                 case VideoControlAction.PB_Resume:
                     vs?.PB_Resume(args.VControl);
+                    args.VControl.PBStatus = VideoControl.PB_Status.Play;
                     break;
                 case VideoControlAction.PB_Pause:
                     vs?.PB_Pause(args.VControl);
+                    args.VControl.PBStatus = VideoControl.PB_Status.Pause;
                     break;
                 case VideoControlAction.PB_Stop:
-                    vs?.StopPreview(args.VControl);
+                    this.StopVideo(args.VControl);
+                    args.VControl.PBStatus = VideoControl.PB_Status.BeforeStart;
                     break;
                 case VideoControlAction.PB_Fast:
                     vs?.PB_Fast(args.VControl);
@@ -474,18 +484,28 @@ namespace ClientAPP.VideoModule
         private void snap(VideoControl vc)
         {
             VideoSourceBase vs = this.getVideoSourceByVideoControl(vc);
+            bool? ret = false;
+            string file = "";
             switch (vc.Mode)
             {
                 case ShowMode.Real:
-                    vs?.Snap(vc, getFileName(DateTime.Now));
+                    file = getFileName(DateTime.Now);
+                    ret = vs?.Snap(vc, file);
                     //this.SnapPicture(vca.VControl);
                     break;
                 case ShowMode.Playback:
                     DateTime time = DateTime.Now;
                     vs.PB_GetCurTime(vc, out time);
-                    vs?.PB_Snap(vc, getFileName(time));                 
+                    file = getFileName(time);
+                    ret = vs?.PB_Snap(vc, file);                 
                     break;
             }
+
+            if(ret==true)
+            {
+                this.SnapEvent?.Invoke(this, new Event.SnapEventArgs() { VC = vc, FileName = file });
+            }
+
 
             //获取文件名
             string getFileName(DateTime time)
